@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    
+<p> Estamos buscando el nombre : {{ nombre }} </p>
+{% if conductores %}
+    <ul>
+        {% for conductor in conductores %}
+            <li>Nombre: {{ conductor.nombre }}</li>
+            <li>Apellido: {{ conductor.apellido }}</li>
+            <li>Categoría: {{ conductor.categoria }}</li>
+        {% endfor %}
+    </ul>
+
+
+ {% endif %}
+
+</body>
+</html>
+
