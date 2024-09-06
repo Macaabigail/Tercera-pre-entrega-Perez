@@ -14,5 +14,17 @@ Herencia de HTML.  La herencia la puede encontrar en la parte de conductores y b
 Por lo menos 3 clases en models. se definen 3 clases Conductores base y guardas 
 Un formulario para insertar datos a todas las clases de tu models.
 Un formulario para buscar algo en la BD . Existen los 3 formularios 
+
+los link para ingresar : 
+para ver los adm /admin/ 
+para inicio : /App/inicio/
+para ver la base :/App/base/
+para ver conductores :/App/conductores/
+para ver guardas:/App/guardas/
+para ver los formulariso de busqueda :/App/formulariodebusqueda/ se pueden buscar todas las especialdiades 
+para cargar personal o base : /App/formularios/ 
+
+
+
 .
 
