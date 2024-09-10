@@ -1,28 +1,30 @@
 # Tercera-pre-entrega-Perez
-Se realizo una App que muestra los datos de tres especilidades distintas ferroviarias 
-activar el entorno 
-corredor el servidor
+Se realizo un sitio web que me muestra las diferentes especialidades en una base oeprativa de transporte . 
+Las especialidades toman servicio en las bases operativas . 
+
+La pagina tiene una barra de navegacion donde se puede acceder : Inicio por dafault , a la base , a los guardas , conductores y los formularios de carga de este personal y de busqueda . 
+Lo primero que se debe hacer es correr el servidor:
+
+Se pueden ver los usuarios si accedemos a la siguiente ruta:
 ir a la ruta /admin/ para ver los usuarios y los permisos 
 usuario 1 : Macarena contraseña : napoleon23
 usuario 2 : Abigail contraseña : napoleon23 
-en la parte de formualarios de  carga podra encontrar los formularios paras las distintas especialidades 
-en la parte de formularios de busqueda podra encontrar los datos que se cargaron previamente . 
 
-Segun consigna: S entrego el  Link de GitHub con el proyecto totalmente subido a la plataforma.
-Proyecto Web Django con patrón MVT que incluya:
-Herencia de HTML.  La herencia la puede encontrar en la parte de conductores y base y guarda 
-Por lo menos 3 clases en models. se definen 3 clases Conductores base y guardas 
-Un formulario para insertar datos a todas las clases de tu models.
-Un formulario para buscar algo en la BD . Existen los 3 formularios 
 
-los link para ingresar : 
-para ver los adm /admin/ 
-para inicio : /App/inicio/
-para ver la base :/App/base/
-para ver conductores :/App/conductores/
-para ver guardas:/App/guardas/
-para ver los formulariso de busqueda :/App/formulariodebusqueda/ se pueden buscar todas las especialdiades 
-para cargar personal o base : /App/formularios/ 
+Cuando entras a la pagina sino estas registrado no podes ver niguna pagina exepto la de "acerca de mi" , todas las otras requiere acceso con usuario y contraseña . 
+En la barra de navegacion hay un boton que dice usuario y nos permite iniciar sesion o registrarse . 
+Una vez registrados se accede al boton de editar usuario , ahi se puede cambiar el nombre mail contraseña y avatar . 
+
+
+En la parte de formularios existen dos tipos : de carga y de bsuqueda 
+
+de carga: se habilita la carga de personal de guarda , condutor y de las bases 
+de busqueda : se puede buscar pro nombre , si lo encuentra muestra la informacion de ese conductor y nos permite ir a un link donde se detalla toda la lista de conductores ahi podemos ver, editar o eliminar . 
+
+
+
+link del excel de las pruebas : https://docs.google.com/spreadsheets/d/1PzZSpkHZTMfv79BruQNESHamRpYAL-tNWRlVSjO8M90/edit?usp=sharing
+link video de uso: https://drive.google.com/file/d/11msBI2-PW0-LXANtwTUGqEr-vE3jqhX2/view?usp=sharing
 
 
 
