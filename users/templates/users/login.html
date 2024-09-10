@@ -1,0 +1,23 @@
+{% extends 'App/padre.html' %}
+
+{% block contenidoque_cambia %}
+    <div class="container mt-5 pt-5">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column">
+                {% if msg_login %}
+                    <p class="fs-5 fw-bold text-danger">{{ msg_login }}</p>
+                {% endif %}
+                
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Iniciar sesión" class="btn btn-primary mt-3">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock contenidoque_cambia %}
+
+
+
+

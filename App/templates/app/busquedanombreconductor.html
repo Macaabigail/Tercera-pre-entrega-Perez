@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 30px; /* Reduce padding for a tighter layout */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-title {
+            color: #fff;
+            font-size: 20px;
+            margin: 20;
+            
+        }
+
+        .navbar .btn {
+            background-color: #ff69b4; /* Rosa */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 30px; /* Añade un margen a la izquierda para desplazar el botón */
+        }
+
+        .navbar .btn:hover {
+            background-color: #ff1493; /* Rosa oscuro */
+        }
+
+        /* Main content */
+        .container {
+            margin-top: 150px; /* Margin to avoid overlap with navbar */
+            text-align: center;
+        }
+
+        .form-container {
+            margin: 50px auto;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .form-container input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px; /* Increase space below the text input */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #ff69b4; /* Rosa */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Add space below the submit button */
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #ff1493; /* Rosa oscuro */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a class="btn" href="{% url 'formulariosbusqueda' %}">Volver atras</a>
+     
+        <h1 class="navbar-title">Buscar por nombre del conductor  .....    </h1>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="form-container">
+            <form action="/buscarconductor/" method="GET">
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre">
+                <input type="submit" value="Buscar">
+                 <a class="btn" href="{% url 'List' %}">Lista Completa de Conductores</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

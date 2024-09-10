@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Envío</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .form-container input[type="submit"] {
+            background-color: #007bff; /* Color azul para el botón */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+        }
+        .form-container p {
+            margin: 0;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulario de Envío</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

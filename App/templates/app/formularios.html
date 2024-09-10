@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'app/css/styles.css' %}" rel="stylesheet">
+    <!-- Optional: Add custom styles here -->
+    <style>
+        .navbar-custom {
+            background-color: #010508; /* Cambia el color de fondo según tus necesidades */
+            padding: 10px 10px; /* Ajusta el padding para una mejor alineación */
+            display: flex;
+            justify-content: space-between; /* Distribuye el espacio entre el título y el botón */
+            align-items: center;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Empuja los elementos del menú hacia la derecha */
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1rem; /* Ajusta el espaciado interno de los enlaces */
+        }
+
+        .btn-primary {
+            background-color: #ff69b4; /* Rosa */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff1493; /* Rosa oscuro */
+        }
+
+        .container {
+            margin-top: 15px; /* Ajusta el margen superior para dejar espacio para la barra de navegación */
+        }
+
+        .section-content {
+            padding: 150px 0; /* Espaciado adicional para separar el contenido */
+            text-align: center;
+        }
+
+        .section-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .section-content .btn {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    {% block contenidoque_cambia %}
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"></a>
+            <div class="d-flex">
+                <a class="btn btn-primary btn-lg" href="{% url 'inicio' %}">Ir a Inicio</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Content section -->
+    <section class="section-content">
+        <div class="container px-5">
+            <h2>Selecciona un formulario para buscar</h2>
+            <a class="btn btn-primary btn-lg" href="{% url 'conductorformulario' %}">Ir a Conductores</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'guardaformulario' %}">Ir a Guardas</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'baseformulario' %}">Ir a Base</a>
+        </div>
+    </section>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="{% static 'app/js/scripts.js' %}"></script>
+
+    {% endblock %}
+
+</body>
+</html>
+
+
+        
+        
+        
+            
+            
+           
+
+                

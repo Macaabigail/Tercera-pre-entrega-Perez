@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Base</title>
+    <style>
+        /* Barra de navegación */
+        .navbar {
+            background-color: #000;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #333;
+        }
+
+        /* Contenedor principal */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 60px; /* Deja espacio para la barra de navegación */
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li p {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        /* Estilo de los botones */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .btn-ver {
+            background-color: #28a745; /* Verde para Ver */
+        }
+
+        .btn-ver:hover {
+            background-color: #218838; /* Verde más oscuro al pasar el ratón */
+        }
+
+        .btn-editar {
+            background-color: #007bff; /* Azul para Editar */
+        }
+
+        .btn-editar:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+        }
+
+        .btn-eliminar {
+            background-color: #dc3545; /* Rojo para Eliminar */
+        }
+
+        .btn-eliminar:hover {
+            background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+        }
+
+        /* Contenedor de botones */
+        .button-container {
+            display: flex;
+            gap: 10px; /* Espacio entre botones */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div>
+            <a href="{% url 'busquedanombrebase' %}">Volver atras</a>
+        </div>
+        <div>
+            <h2>Listado de Base</h2>
+        </div>
+    </div>
+
+    <h1>Base</h1>
+    <ul>
+        {% for base in base %}
+            <li>
+                <p><strong>Nombre:</strong> {{ base.nombre }}</p>
+                <div class="button-container">
+                    <a class="btn btn-ver" href="{% url 'Detailbase' base.id %}">Ver</a>
+                    <a class="btn btn-editar" href="{% url 'Editbase' base.id %}">Editar</a>
+                    <a class="btn btn-eliminar" href="{% url 'Deletebase' base.id %}">Borrar</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+    <style>
+        /* Asegúrate de que el body y html ocupen el 100% de la altura */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        /* Contenedor principal que ocupa toda la pantalla */
+        .full-height {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+        }
+        .form-container {
+            padding: 20px;
+            width: 100%;
+            max-width: 600px; /* Limita el ancho del formulario */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar el formulario */
+            background-color: #fff; /* Fondo blanco para el formulario */
+        }
+    </style>
+</head>
+<body>
+
+    {% extends 'App/padre.html' %}
+
+    {% block contenidoque_cambia %}
+    <div class="full-height">
+        <div class="form-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input class="btn btn-success" type="submit" value="Cambiar contraseña">
+            </form>
+        </div>
+    </div>
+    {% endblock contenidoque_cambia %}
+
+</body>
+</html>
+

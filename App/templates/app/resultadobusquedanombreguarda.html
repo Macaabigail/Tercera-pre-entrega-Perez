@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #ff0000;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados de Búsqueda</h1>
+        <p>Estamos buscando el nombre: <strong>{{ nombre }}</strong></p>
+
+        {% if guardas %}
+            {% for guarda in guardas %}
+            <div class="search-result">
+                <ul>
+                    <li><strong>Nombre:</strong> {{ guarda.nombre }}</li>
+                    <li><strong>Apellido:</strong> {{ guarda.apellido }}</li>
+                    <li><strong>Categoría:</strong> {{ guarda.categoria }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-results">
+                <p>No se encontraron guardas con ese nombre.</p>
+            </div>
+        {% endif %}
+
+        <a href="{% url 'busquedanombreguarda' %}">Regresar</a>
+    </div>
+</body>
+</html>
+

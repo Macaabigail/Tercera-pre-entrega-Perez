@@ -1,0 +1,25 @@
+{% extends 'App/padre.html' %}
+
+    {% block contenidoque_cambia %}
+    <div class="container mt-3 pt-5">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column">
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table>
+                        {{ mi_form.as_table }}
+                    </table>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a class="btn btn-primary" href="{% url 'CambiarPass' %}">Cambiar contraseña</a>
+                        <input class="btn btn-success" type="submit" value="Actualizar">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    {% endblock contenidoque_cambia %}
+
+</body>
+</html>

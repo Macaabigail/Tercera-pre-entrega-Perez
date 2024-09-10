@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'app/css/styles.css' %}" rel="stylesheet">
+    <!-- Optional: Add custom styles here -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .content-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-custom {
+            background-color: #010508; /* Cambia el color de fondo según tus necesidades */
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1rem; /* Ajusta el espaciado interno de los enlaces */
+        }
+
+        .container {
+            margin-top: 10px; /* Ajusta el margen superior para dejar espacio para la barra de navegación */
+        }
+
+        .section-content {
+            padding: 200px 0; /* Espaciado adicional para separar el contenido */
+            text-align: center;
+        }
+
+        .section-content h2 {
+            margin-bottom: 40px;
+        }
+
+        .section-content .btn {
+            margin: 10px;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        {% block contenidoque_cambia %}
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">Formularios de Búsqueda</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+          
+                            <a class="btn btn-primary btn-lg" href="{% url 'inicio' %}">Ir a Inicio</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Content section -->
+        <section class="section-content">
+            <div class="container px-5">
+                <h2>Selecciona un formulario para buscar</h2>
+                <a class="btn btn-primary btn-lg" href="{% url 'busquedanombreconductor' %}">Ir a Conductores</a>
+                <a class="btn btn-primary btn-lg" href="{% url 'busquedanombreguarda' %}">Ir a Guardas</a>
+                <a class="btn btn-primary btn-lg" href="{% url 'busquedanombrebase' %}">Ir a Base</a>
+            </div>
+        </section>
+        
+        {% endblock %}
+    </div>
+
+    <!-- Footer-->
+    <footer class="footer py-5 bg-black">
+        <div class="container px-5">
+            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2023</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="{% static 'app/js/scripts.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+    
+    
+   

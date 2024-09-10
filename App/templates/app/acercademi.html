@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% extends "App/padre.html" %}  
+
+    {% load static %}
+    
+    {% block contenidoque_cambia %}
+
+
+    
+    <!-- Content section 2-->
+    <section>
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="p-2"><img class="img-fluid rounded-circle" src="{% static 'app/assets/img/01.jpg' %}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <h2 class="display-4">Acerca de mi</h2>
+                        <p>Mi nombre es Macarena Perez , soy Licenciada en Logistica . Trabajo en Trenes Argentinos tengo a cargo la unidad de gestion de datos , basicamente me ocupo del analisis de datos y el modelado .Por eso mismo y en post de seguir creciendo y avanzando decidi iniciarme en el mundo de la programacion.  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {% endblock %}
+</body>
+</html>
+

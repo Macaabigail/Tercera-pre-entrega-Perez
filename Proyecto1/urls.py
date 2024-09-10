@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from Proyecto1.views import saludo, otra_vista,probando_template,agregar_base
+from django.conf import settings
+from django.conf.urls.static import static 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +26,12 @@ urlpatterns = [
     path('otra/', otra_vista),
     path('plantilla/', probando_template),
     path('agregar_base/<nom>/', agregar_base),
-    path('App/', include('App.urls')),
+    path('', include('App.urls')),
+    path('users/', include('users.urls')),
+    
     
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+
